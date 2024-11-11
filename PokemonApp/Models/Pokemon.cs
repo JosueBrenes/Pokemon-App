@@ -14,5 +14,7 @@ namespace PokemonApp.Models
         public string Evolucion { get; set; }
         public decimal Peso { get; set; }
         public int Numero { get; set; }
+
+        //prueba
     }
 }

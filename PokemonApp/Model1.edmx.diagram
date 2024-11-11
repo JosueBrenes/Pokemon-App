@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="47482d98353948df9cffd237f4a3b883" Name="Diagram1">
-        <EntityTypeShape EntityType="POKEMON_PROYECTModel.Pokemon" Width="1.5" PointX="6.125" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POKEMON_PROYECTModel.Pokemon" Width="1.5" PointX="5" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="POKEMON_PROYECTModel.Role" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="POKEMON_PROYECTModel.Usuario" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="POKEMON_PROYECTModel.FK__Usuarios__RolId__4BAC3F29" ManuallyRouted="false" />

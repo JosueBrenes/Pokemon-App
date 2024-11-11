@@ -30,4 +30,6 @@ namespace PokemonApp.Repository
             return _POKEMON_PROYECTEntities.Roles.ToList();
         }
     }
+
+    //prueba 2
 }
