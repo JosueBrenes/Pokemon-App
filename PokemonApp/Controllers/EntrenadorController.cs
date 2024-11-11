@@ -1,24 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
 using PokemonApp.Models;
+using PokemonApp.Repository;
 
 namespace PokemonApp.Controllers
 {
     public class EntrenadorController : Controller
     {
+        private readonly RepositoryBase _repository;
 
-        private PokemondbContext db = new PokemondbContext();
-
+        public EntrenadorController()
+        {
+            _repository = new RepositoryBase(new POKEMON_PROYECTEntities());
+        }
 
         public ActionResult Index()
         {
-            var userId = User.Identity.GetUserId<int>();
-            var pokemons = db.Pokemons.Where(p => p.UsuarioId == userId).ToList(); 
-            var totalPokemons = pokemons.Count();
+        
+            var pokemons = _repository.GetPokemon().ToList();
+
+            int totalPokemons = pokemons.Count;
             var pokemonsByType = pokemons.GroupBy(p => p.Tipo)
                                          .Select(g => new { Tipo = g.Key, Count = g.Count() })
                                          .ToList();
@@ -32,14 +33,12 @@ namespace PokemonApp.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

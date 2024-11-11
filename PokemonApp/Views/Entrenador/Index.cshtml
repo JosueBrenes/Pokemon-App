@@ -36,38 +36,53 @@
     <p>Total Pokémon capturados: @ViewBag.TotalPokemons</p>
 
     <h3>Pokémon por Tipo</h3>
-    <ul>
-        @foreach (var item in ViewBag.PokemonsByType)
+    @if (ViewBag.PokemonsByType != null && ViewBag.PokemonsByType.Count > 0)
     {
-        <li>@item.Tipo: @item.Count</li>
+        <ul>
+            @foreach (var item in ViewBag.PokemonsByType)
+            {
+                <li>@item.Tipo: @item.Count</li>
+            }
+        </ul>
     }
-    </ul>
+    else
+    {
+        <p>No hay datos disponibles para mostrar los tipos de Pokémon.</p>
+    }
 
     <h3>Lista de Pokémon</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Tipo</th>
-                <th>Debilidad</th>
-                <th>Evolución</th>
-                <th>Peso</th>
-                <th>Número</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var pokemon in Model) 
-            {
-            <tr>
-                <td>@pokemon.Nombre</td>
-                <td>@pokemon.Tipo</td>
-                <td>@pokemon.Debilidad</td>
-                <td>@pokemon.Evolucion</td>
-                <td>@pokemon.Peso</td>
-                <td>@pokemon.Numero</td>
-            </tr>
-            }
-        </tbody>
-    </table>
+    @if (Model != null && Model.Count() > 0)
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Debilidad</th>
+                    <th>Evolución</th>
+                    <th>Peso (kg)</th>
+                    <th>Número</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var pokemon in Model)
+                {
+                    <tr>
+                        <td>@pokemon.Nombre</td>
+                        <td>@pokemon.Tipo</td>
+                        <td>@pokemon.Debilidad</td>
+                        <td>@pokemon.Evolucion</td>
+                        <td>@pokemon.Peso</td>
+                        <td>@pokemon.Numero</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No hay Pokémon capturados para mostrar en la lista.</p>
+    }
+
 
 </main>

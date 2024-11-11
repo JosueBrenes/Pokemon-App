@@ -34,31 +34,40 @@
 
     <h3>Usuarios por Rol</h3>
     <table>
-        <tr>
-            <th>Rol</th>
-            <th>Cantidad de Usuarios</th>
-        </tr>
-        @foreach (var item in ViewBag.UsersByRole)
-    {
-        <tr>
-            <td>@item.Role</td>
-            <td>@item.Count</td>
-        </tr>
-    }
+        <thead>
+            <tr>
+                <th>Rol</th>
+                <th>Cantidad de Usuarios</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.UsersByRole)
+            {
+                <tr>
+                    <td>@item.Role</td>
+                    <td>@item.Count</td>
+                </tr>
+            }
+        </tbody>
     </table>
 
     <h3>Pokemones por Tipo</h3>
     <table>
-        <tr>
-            <th>Tipo</th>
-            <th>Cantidad de Pokemones</th>
-        </tr>
-        @foreach (var item in ViewBag.PokemonsByType)
-    {
-        <tr>
-            <td>@item.Tipo</td>
-            <td>@item.Count</td>
-        </tr>
-    }
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Cantidad de Pokemones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.PokemonsByType)
+            {
+                <tr>
+                    <td>@item.Tipo</td>
+                    <td>@item.Count</td>
+                </tr>
+            }
+        </tbody>
     </table>
+
 </main>

@@ -30,17 +30,19 @@
             <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
         </section>
     </div>
-
     <h2>Dashboard Enfermero</h2>
 
     <p>Peso Promedio de los Pokémon: @ViewBag.AverageWeight kg</p>
 
     <h3>Pokémon por Tipo</h3>
     <ul>
-        @foreach (var item in ViewBag.PokemonsByType)
-    {
-        <li>@item.Tipo: @item.Count</li>
-    }
+        @if (ViewBag.PokemonsByType != null)
+        {
+            foreach (var item in ViewBag.PokemonsByType)
+            {
+                <li>@item.Tipo: @item.Count</li>
+            }
+        }
     </ul>
 
     <h3>Lista de Pokémon</h3>
@@ -56,17 +58,21 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var pokemon in Model)
-        {
-            <tr>
-                <td>@pokemon.Nombre</td>
-                <td>@pokemon.Tipo</td>
-                <td>@pokemon.Debilidad</td>
-                <td>@pokemon.Evolucion</td>
-                <td>@pokemon.Peso</td>
-                <td>@pokemon.Numero</td>
-            </tr>
-        }
+            @if (Model != null)
+            {
+                foreach (var pokemon in Model)
+                {
+                    <tr>
+                        <td>@pokemon.Nombre</td>
+                        <td>@pokemon.Tipo</td>
+                        <td>@pokemon.Debilidad</td>
+                        <td>@pokemon.Evolucion</td>
+                        <td>@pokemon.Peso kg</td>
+                        <td>@pokemon.Numero</td>
+                    </tr>
+                }
+            }
         </tbody>
     </table>
+
 </main>
