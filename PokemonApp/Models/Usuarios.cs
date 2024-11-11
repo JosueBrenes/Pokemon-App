@@ -14,3 +14,4 @@ namespace PokemonApp.Models
         public string Nombre { get; set; }
         public Role Rol { get; set; }
     }
+}

@@ -7,7 +7,7 @@ namespace PokemonApp.Models
 {
     public class Pokemon
     {
-        public int Id { get; set; } 
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Tipo { get; set; }
         public string Debilidad { get; set; }
@@ -15,3 +15,4 @@ namespace PokemonApp.Models
         public decimal Peso { get; set; }
         public int Numero { get; set; }
     }
+}

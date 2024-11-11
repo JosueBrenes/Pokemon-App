@@ -16,7 +16,7 @@ namespace PokemonApp.Controllers
 
         public ActionResult Index()
         {
-        
+
             var pokemons = _repository.GetPokemon().ToList();
 
             int totalPokemons = pokemons.Count;
