@@ -127,8 +127,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+=======
     <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Controllers\EnfermeroController.cs" />
     <Compile Include="Controllers\EntrenadorController.cs" />
@@ -136,6 +139,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Battle.cs" />
+    <Compile Include="Models\Challenge.cs" />
+=======
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -234,6 +240,17 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\Challenges\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Nurse\" />
+    <Folder Include="Views\Trainer\" />
     <Content Include="Views\Administrador\About.cshtml" />
     <Content Include="Views\Administrador\Contact.cshtml" />
     <Content Include="Views\Administrador\Index.cshtml" />
